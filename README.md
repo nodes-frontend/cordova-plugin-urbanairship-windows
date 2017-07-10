@@ -5,7 +5,9 @@ I found the lack of Urban Airship plugin support for Windows disturbing! Damnit 
 The repo is still in development and this is a long learning process for myself, since I have never written a cordova plugin before. Any tips, PRs, comments are greatly appreciated!
 
 ## Install
-`npm i cordova-plugin-urbanairship-windows --save`
+`$ npm i cordova-plugin-urbanairship-windows --save`
+### Ionic Cordova plugin
+`$ ionic cordova plugin add https://github.com/krislm/cordova-plugin-urbanairship-windows.git`
 
 ## Usage
 #### Ionic 2+
