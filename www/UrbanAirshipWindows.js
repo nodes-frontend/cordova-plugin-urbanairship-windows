@@ -6,7 +6,62 @@ function callNative(success, failure, name, args) {
 	exec(success, failure, "UrbanAirshipWindows", name, args)
 }
 
+function bindDocumentEvent() {
+	callNative(function(e) {
+		console.log("Firing document event: " + e.eventType);
+		cordova.fireDocumentEvent(e.eventType, e.eventData);
+	}, null, "registerListener");
+}
+
 module.exports = {
+	/**
+	 * Event fired when a new deep link is received.
+	 *
+	 * @event "urbanairship.deep_link"
+	 * @type {object}
+	 * @param {string} [deepLink] The deep link.
+	 */
+	
+	/**
+	 * Event fired when a channel registration occurs.
+	 *
+	 * @event "urbanairship.registration"
+	 * @type {object}
+	 * @param {string} [channelID] The channel ID.
+	 * @param {string} [error] Error message if an error occurred.
+	 */
+	
+	/**
+	 * Event fired when the inbox is updated.
+	 *
+	 * @event "urbanairship.inbox_updated"
+	 */
+	
+	/**
+	 * Event fired when a push is received.
+	 *
+	 * @event "urbanairship.push"
+	 * @type {object}
+	 * @param {string} message The push alert message.
+	 * @param {object} extras Any push extras.
+	 * @param {number} [notification_id] The Android notification ID.
+	 */
+	
+	/**
+	 * Event fired when notification opened.
+	 *
+	 * @event "urbanairship.notification_opened"
+	 * @type {object}
+	 * @param {string} message The push alert message.
+	 * @param {object} extras Any push extras.
+	 * @param {number} [notification_id] The Android notification ID.
+	 */
+	
+	/**
+	 * Re-attaches document event listeners in this webview
+	 */
+	reattach: bindDocumentEvent,
+	
 	/**
 	 * Initializes the SDK
 	 * @param {string} uaConfig path string to the xml containing UrbanAirship config
@@ -29,7 +84,7 @@ module.exports = {
 	 * @param {string} failure.message The error message.
 	 */
 	setUserNotificationsEnabled: function(enabled, success, failure) {
-		if (enabled === null) failure('You must specify enabled boolean.');
+		if (enabled === undefined || enabled === null) failure('You must specify enabled boolean.');
 		
 		console.info('UrbanAirshipWindows will set user notifications enabled: '+enabled);
 		callNative(success, failure, "setUserNotificationsEnabled", enabled);
