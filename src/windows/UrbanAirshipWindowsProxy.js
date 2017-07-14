@@ -42,14 +42,24 @@ module.exports = {
 		}
 	},
 	
-	setAlias: function(sucess, failure, aliasString) {
+	setAlias: function(success, failure, aliasString) {
 		
 		var res = RuntimeComponentTest.Class1.setApid(aliasString);
 		
 		if (res.indexOf('Error') > -1) {
 			failure(res);
 		} else {
-			sucess(res);
+			success(res);
+		}
+	},
+	
+	getAlias: function(success, failure) {
+		var res = RuntimeComponentTest.Class1.getAlias();
+		
+		if (res.indexOf('Error') > -1) {
+			failure(res);
+		} else {
+			success(res);
 		}
 	}
 	

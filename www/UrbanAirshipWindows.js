@@ -104,5 +104,9 @@ module.exports = {
 			console.log('UrbanAirshipWindows will set alias: ' + aliasString);
 		}
 		callNative(success, failure, "setAlias", aliasString);
+	},
+	
+	getAlias: function(success, failure) {
+		callNative(success, failure, "getAlias");
 	}
 };
