@@ -12,6 +12,11 @@ function listenAndDispatch() {
 			var event = new CustomEvent('urbanairship.push',  { detail: e });
 			document.dispatchEvent(event);
 		});
+		
+		RuntimeComponentTest.Class1.addEventListener('pushparseerror', function(e) {
+			var event = new CustomEvent('urbanairship.pusherror', { detail: e });
+			document.dispatchEvent(event);
+		})
 	}
 }
 
