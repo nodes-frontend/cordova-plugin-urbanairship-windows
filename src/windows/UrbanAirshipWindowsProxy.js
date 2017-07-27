@@ -3,26 +3,43 @@ var cordova = require('cordova'),
 
 function listenAndDispatch() {
 	if(RuntimeComponentTest.Class1) {
-		RuntimeComponentTest.Class1.addEventListener('registrationstatechanged', function(e) {
-			var event = new CustomEvent('urbanairship.registration', { detail: e });
-			document.dispatchEvent(event);
-		});
+		try {
+			RuntimeComponentTest.Class1.addEventListener('registrationstatechanged', function(e) {
+				console.info('UrbanAirshipWindows will dispatch Event: ', e);
+				var event = new CustomEvent('urbanairship.registration', { detail: e });
+				document.dispatchEvent(event);
+			});
+		} catch(exception) {
+			console.error('UrbanAirshipWindows could not add Event Listener for registrationstatechanged', exception);
+		}
 		
-		RuntimeComponentTest.Class1.addEventListener('pushstatechanged', function(e) {
-			var event = new CustomEvent('urbanairship.push',  { detail: e });
-			document.dispatchEvent(event);
-		});
+		try{
+			RuntimeComponentTest.Class1.addEventListener('pushstatechanged', function(e) {
+				console.info('UrbanAirshipWindows will dispatch Event: ', e);
+				var event = new CustomEvent('urbanairship.push',  { detail: e });
+				document.dispatchEvent(event);
+			});
+		} catch(exception) {
+			console.error('UrbanAirshipWindows could not add Event Listener for pushstatechanged', exception);
+		}
 		
-		RuntimeComponentTest.Class1.addEventListener('pushparseerror', function(e) {
-			var event = new CustomEvent('urbanairship.pusherror', { detail: e });
-			document.dispatchEvent(event);
-		})
+		try{
+			RuntimeComponentTest.Class1.addEventListener('pushparseerror', function(e) {
+				console.info('UrbanAirshipWindows will dispatch Event: ', e);
+				var event = new CustomEvent('urbanairship.pusherror', { detail: e });
+				document.dispatchEvent(event);
+			});
+		} catch(exception) {
+			console.error('UrbanAirshipWindows could not add Event Listener for pushparseerror', exception);
+		}
+
 	}
 }
 
 module.exports = {
 	
 	init: function(success, failure, uaConfig) {
+		listenAndDispatch();
 		
 		var res = RuntimeComponentTest.Class1.setUAConfig(uaConfig['key'], uaConfig['secret'], uaConfig['production']);
 		
@@ -33,7 +50,6 @@ module.exports = {
 			if (takeOffRes.indexOf('Error') > -1) failure(takeOffRes);
 			else success(res + '\n' + takeOffRes);
 		}
-		listenAndDispatch();
 	},
 	
 	setUserNotificationsEnabled: function(success, failure, enabled) {

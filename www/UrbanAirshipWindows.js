@@ -60,7 +60,7 @@ module.exports = {
 	/**
 	 * Re-attaches document event listeners in this webview
 	 */
-	reattach: bindDocumentEvent,
+	//reattach: bindDocumentEvent,
 	
 	/**
 	 * Initializes the SDK
