@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="cordova-plugin-urbanairship-windows" version="1.0.3
+        id="cordova-plugin-urbanairship-windows" version="1.0.4
 ">
     <name>UrbanAirshipWindows</name>
     <description>Cordova UrbanAirship Plugin for Windows</description>
