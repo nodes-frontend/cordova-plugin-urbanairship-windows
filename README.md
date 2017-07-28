@@ -1,17 +1,12 @@
 # Urban Airship cordova plugin for Windows 10+
 
-## Disclaimer!
-I found the lack of Urban Airship plugin support for Windows disturbing! Damnit those 3 people deserve UA suuport! So I decided to write this plugin myself.
-The repo is still in development and this is a long learning process for myself, since I have never written a cordova plugin before. Any tips, PRs, comments are greatly appreciated!
-
 ## Install
-`$ npm i cordova-plugin-urbanairship-windows --save`
 ### Ionic Cordova plugin
-`$ ionic cordova plugin add https://github.com/krislm/cordova-plugin-urbanairship-windows.git`
+`$ ionic cordova plugin add https://github.com/nodes-frontend/cordova-plugin-urbanairship-windows.git`
 
 ## Usage
 #### Ionic 2+
-##### In your `App.component.ts`:
+##### eg. in your `App.component.ts`:
 ```
 declare const UrbanAirshipWindows: any;
 
