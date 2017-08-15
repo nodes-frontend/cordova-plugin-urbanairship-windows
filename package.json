@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-urbanairship-windows",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Cordova UrbanAirship Plugin for Windows",
   "cordova": {
     "id": "cordova-plugin-urbanairship-windows",
