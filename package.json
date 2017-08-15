@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krislm/cordova-plugin-urbanairship-windows.git"
+    "url": "git+https://github.com/nodes-frontend/cordova-plugin-urbanairship-windows.git"
   },
   "keywords": [
     "cordova",
@@ -31,9 +31,9 @@
   "author": "krislm",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krislm/cordova-plugin-urbanairship-windows/issues"
+    "url": "https://github.com/nodes-frontend/cordova-plugin-urbanairship-windows/issues"
   },
-  "homepage": "https://github.com/krislm/cordova-plugin-urbanairship-windows#readme",
+  "homepage": "https://github.com/nodes-frontend/cordova-plugin-urbanairship-windows#readme",
   "devDependencies": {},
   "scripts": {}
 }
