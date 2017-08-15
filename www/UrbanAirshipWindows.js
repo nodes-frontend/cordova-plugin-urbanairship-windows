@@ -6,12 +6,12 @@ function callNative(success, failure, name, args) {
 	exec(success, failure, "UrbanAirshipWindows", name, args)
 }
 
-function bindDocumentEvent() {
-	callNative(function(e) {
-		console.log("Firing document event: " + e.eventType);
-		cordova.fireDocumentEvent(e.eventType, e.eventData);
-	}, null, "registerListener");
-}
+// function bindDocumentEvent() {
+// 	callNative(function(e) {
+// 		console.log("Firing document event: " + e.eventType);
+// 		cordova.fireDocumentEvent(e.eventType, e.eventData);
+// 	}, null, "registerListener");
+// }
 
 module.exports = {
 	/**
