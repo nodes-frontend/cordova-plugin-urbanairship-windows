@@ -14,7 +14,7 @@
         <js-module src="src/windows/UrbanAirshipWindowsProxy.js" name="UrbanAirshipWindowsProxy">
             <merges target="" />
         </js-module>
-        <framework src="src/windows/RuntimeComponentTest.winmd" custom="true"/>
+        <framework src="src/windows/PushComponent.winmd" custom="true"/>
         <framework src="src/windows/UrbanAirship.winmd" custom="true"/>
     </platform>
 </plugin>
