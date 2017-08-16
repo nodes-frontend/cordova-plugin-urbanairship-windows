@@ -83,11 +83,11 @@ module.exports = {
 	 * @param {function(message)} [failure] Failure callback.
 	 * @param {string} failure.message The error message.
 	 */
-	setUserNotificationsEnabled: function(enabled, success, failure) {
+	setUserNotificationsEnabled: function(enabled, interceptNotifications, success, failure) {
 		if (enabled === undefined || enabled === null) failure('You must specify enabled boolean.');
 		
 		console.info('UrbanAirshipWindows will set user notifications enabled: '+enabled);
-		callNative(success, failure, "setUserNotificationsEnabled", enabled);
+		callNative(success, failure, "setUserNotificationsEnabled", enabled, interceptNotifications);
 	},
 	
 	/**
@@ -108,5 +108,13 @@ module.exports = {
 	
 	getAlias: function(success, failure) {
 		callNative(success, failure, "getAlias");
+	},
+
+	setTags: function(success, failure, tags) {
+		callNative(success, failure, "setTags", tags);
+	},
+	
+	getTags: function(success, failure) {
+		callNative(success, failure, 'getTags');
 	}
 };
