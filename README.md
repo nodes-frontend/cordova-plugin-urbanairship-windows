@@ -1,4 +1,4 @@
-# Urban Airship cordova plugin for Windows 10+
+# ⛔️ [DEPRECATED] Urban Airship cordova plugin for Windows 10+
 
 ## Install
 ### Ionic Cordova plugin
